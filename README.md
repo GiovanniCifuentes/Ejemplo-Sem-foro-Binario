@@ -92,6 +92,7 @@ Actualización de Etiquetas
 
 
 # Resumen
-Este código crea tres hilos que intentan acceder a un recurso compartido controlado por un semáforo binario. Los métodos de actualización de la interfaz de usuario aseguran que los cambios se realicen de forma segura desde cualquier hilo. La barra de progreso y las etiquetas proporcionan una representación visual del estado y el progreso de cada hilo.
+
+El código resuelve los problemas de concurrencia, exclusión mutua y sincronización mediante el uso del semáforo binario SemaphoreSlim. Concurrencia se maneja al permitir que múltiples hilos (hilo1, hilo2, hilo3) intenten acceder al recurso compartido simultáneamente. Exclusión mutua se asegura con el semáforo, que permite que solo un hilo acceda al recurso compartido recursoCompartido a la vez al llamar a semaforo.Wait() antes de acceder y semaforo.Release() después de finalizar el acceso. La sincronización se maneja con la actualización de la interfaz gráfica, donde se utiliza Invoke para asegurar que las modificaciones a los controles de la interfaz, como las etiquetas y la barra de progreso, se realicen en el hilo principal de la UI, evitando conflictos y errores de acceso concurrente a los controles.
 
 
